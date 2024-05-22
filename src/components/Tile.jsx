@@ -2,48 +2,31 @@
 import React from 'react';
 
 function Tile (props) {
-    if (props.isTextOnly === true && props.isInverted === false){
-        return (<>
-            <section>
-                <h2>{props.title}</h2>
-            </section>
-            <section>
-                {props.children}
-            </section>
-        </>)
-    }
-    if (props.isTextOnly === true && props.isInverted === true) {
-        return (<>
-            <section>
-                {props.children}
-            </section>
-            <section>
-                <h2>{props.title}</h2>
-            </section>
-        </>)
+
+    if (props.title === null) {
+        return (<section>
+            <img src={props.image} alt="image tile"/>
+        </section>)
     }
 
-    if (props.isInverted === true) {
-        return (<>
-            <section>
-            <img src={props.image} alt={props.title}/>
-            </section>
-            <section>
-                <h2>{props.title}</h2>
-                {props.children}
-            </section>
-        </>)
-    }
-
-    else return (<>
-        <section>
+    if (props.image === null) {
+        return (<section>
             <h2>{props.title}</h2>
             {props.children}
-        </section>
-        <section>
-            <img src={props.image} alt={props.title}/>
-        </section>
-    </>)
+        </section>)
+    }
+
+    else {
+        return (<>
+            <section>
+                <img src={props.image} alt={props.title}/>
+            </section>
+            <section>
+                <h2>{props.title}</h2>
+                {props.children}
+            </section>
+        </>)
+    }
 }
 
 export default Tile;
