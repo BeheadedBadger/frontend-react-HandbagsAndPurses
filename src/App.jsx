@@ -7,9 +7,9 @@ function App() {
   return (<>
   <h1>Handbags & Purses</h1>
   <nav>
-    <Button isDisabled={false} text="to the collection" target="location.href='http://www.example.com'"/>
-    <Button isDisabled={false} text="shop all bags" target="location.href='http://www.example.com'"/>
-    <Button isDisabled={true} text="pre-orders" target="location.href='http://www.example.com'"/>
+    <Button isDisabled={false} text="to the collection"/>
+    <Button isDisabled={false} text="shop all bags"/>
+    <Button isDisabled={true} text="pre-orders"/>
   </nav>
   <main>
     <Product label="Best seller" name="The handy bag" image="src/assets/bag_1.png" price="€400,-"></Product>
